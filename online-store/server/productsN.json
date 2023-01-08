@@ -1,0 +1,233 @@
+[
+  {
+    "id": "item-1",
+    "name": "iPhone 9",
+    "image": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+    "company": "Apple",
+    "discount": "10%",
+    "category": "smartphones",
+    "quantity": 15,
+    "price": 120,
+    "popular": "no"
+  },
+  {
+    "id": "item-2",
+    "name": "iPhone X",
+    "image": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+    "company": "Apple",
+    "discount": "5%",
+    "category": "smartphones",
+    "quantity": 1,
+    "price": 140,
+    "popular": "yes"
+  },
+  {
+    "id": "item-3",
+    "name": "Samsung Universe 9",
+    "image": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+    "company": "Samsung",
+    "discount": "15%",
+    "category": "smartphones",
+    "quantity": 11,
+    "price": 160,
+    "popular": "no"
+  },
+  {
+    "id": "item-4",
+    "name": "OPPO F19",
+    "image": "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
+    "company": "OPPO",
+    "discount": "15%",
+    "category": "smartphones",
+    "quantity": 6,
+    "price": 180,
+    "popular": "no"
+  },
+  {
+    "id": "item-5",
+    "name": "Huawei P30",
+    "image": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+    "company": "Huawei",
+    "discount": "5%",
+    "category": "smartphones",
+    "quantity": 6,
+    "price": 200,
+    "popular": "no"
+  },
+  {
+    "id": "item-6",
+    "name": "MacBook Pro",
+    "image": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+    "company": "Apple",
+    "discount": "5%",
+    "category": "laptops",
+    "quantity": 10,
+    "price": 220,
+    "popular": "yes"
+  },
+  {
+    "id": "item-7",
+    "name": "Galaxy Book",
+    "image": "https://i.dummyjson.com/data/products/7/thumbnail.jpg",
+    "company": "Samsung",
+    "category": "laptops",
+    "quantity": 2,
+    "discount": "10%",
+    "price": 240,
+    "popular": "no"
+  },
+  {
+    "id": "item-8",
+    "name": "Surface 4",
+    "image": "https://i.dummyjson.com/data/products/8/thumbnail.jpg",
+    "company": "Microsoft",
+    "discount": "10%",
+    "category": "laptops",
+    "quantity": 8,
+    "price": 260,
+    "popular": "yes"
+  },
+  {
+    "id": "item-9",
+    "name": "INBOOK",
+    "image": "https://i.dummyjson.com/data/products/9/thumbnail.jpg",
+    "company": "Infinix",
+    "discount": "10%",
+    "category": "laptops",
+    "quantity": 1,
+    "price": 280,
+    "popular": "no"
+  },
+  {
+    "id": "item-10",
+    "name": "HP Pavilion",
+    "image": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
+    "company": "HP",
+    "discount": "15%",
+    "category": "laptops",
+    "quantity": 9,
+    "price": 300,
+    "popular": "no"
+  },
+  {
+    "id": "item-11",
+    "name": "Wristwatch",
+    "image": "https://i.dummyjson.com/data/products/61/thumbnail.jpg",
+    "company": "Naviforce",
+    "discount": "5%",
+    "category": "mens-watches",
+    "quantity": 1,
+    "price": 320,
+    "popular": "no"
+  },
+  {
+    "id": "item-12",
+    "name": "Brand Watch",
+    "image": "https://i.dummyjson.com/data/products/62/thumbnail.jpg",
+    "company": "Naviforce",
+    "discount": "10%",
+    "category": "mens-watches",
+    "quantity": 8,
+    "price": 340,
+    "popular": "no"
+  },
+  {
+    "id": "item-13",
+    "name": "Royal Watch",
+    "image": "https://i.dummyjson.com/data/products/63/thumbnail.webp",
+    "company": "Naviforce",
+    "discount": "15%",
+    "category": "mens-watches",
+    "quantity": 15,
+    "price": 360,
+    "popular": "no"
+  },
+  {
+    "id": "item-14",
+    "name": "Skeleton Watch",
+    "image": "https://i.dummyjson.com/data/products/64/thumbnail.jpg",
+    "company": "Naviforce",
+    "discount": "5%",
+    "category": "mens-watches",
+    "quantity": 1,
+    "price": 380,
+    "popular": "yes"
+  },
+  {
+    "id": "item-15",
+    "name": "Wrist Watch",
+    "image": "https://i.dummyjson.com/data/products/65/thumbnail.webp",
+    "company": "Naviforce",
+    "discount": "10%",
+    "category": "mens-watches",
+    "quantity": 15,
+    "price": 400,
+    "popular": "no"
+  },
+  {
+    "id": "item-16",
+    "name": "Couple Watch",
+    "image": "https://i.dummyjson.com/data/products/66/thumbnail.jpg",
+    "company": "Eastern Watches",
+    "discount": "15%",
+    "category": "womens-watches",
+    "quantity": 1,
+    "price": 420,
+    "popular": "yes"
+  },
+  {
+    "id": "item-17",
+    "name": "Fashion Watch",
+    "image": "https://i.dummyjson.com/data/products/67/thumbnail.jpg",
+    "company": "Eastern Watches",
+    "discount": "5%",
+    "category": "womens-watches",
+    "quantity": 3,
+    "price": 440,
+    "popular": "yes"
+  },
+  {
+    "id": "item-18",
+    "name": "Luxury Watch",
+    "image": "https://i.dummyjson.com/data/products/68/thumbnail.webp",
+    "company": "Eastern Watches",
+    "discount": "15%",
+    "category": "womens-watches",
+    "quantity": 15,
+    "price": 460,
+    "popular": "no"
+  },
+  {
+    "id": "item-19",
+    "name": "Golden Watch",
+    "image": "https://i.dummyjson.com/data/products/69/thumbnail.jpg",
+    "company": "Eastern Watches",
+    "discount": "15%",
+    "category": "womens-watches",
+    "quantity": 8,
+    "price": 480,
+    "popular": "no"
+  },
+  {
+    "id": "item-20",
+    "name": "Stainless Steel",
+    "image": "https://i.dummyjson.com/data/products/70/thumbnail.jpg",
+    "company": "Eastern Watches",
+    "discount": "5%",
+    "category": "womens-watches",
+    "quantity": 10,
+    "price": 500,
+    "popular": "yes"
+  },
+  {
+    "id": "item-21",
+    "name": "Crystal",
+    "image": "https://i.dummyjson.com/data/products/21/thumbnail.png",
+    "company": "Eastern Watches",
+    "discount": "15%",
+    "category": "white",
+    "quantity": 1,
+    "price": 520,
+    "popular": "yes"
+  }
+]
