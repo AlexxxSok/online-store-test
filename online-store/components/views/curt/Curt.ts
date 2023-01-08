@@ -2,6 +2,7 @@ import './curt.scss';
 import { ProductsInterface } from '../../appTypes/Interface';
 import localStore from '../../localStorage/LocalStorage';
 import info from '../../../server/products.json'; //! ADD
+import { doc } from 'prettier';
 class Curt {
   products: ProductsInterface[];
 
@@ -62,20 +63,13 @@ class Curt {
     const itemStore: string[] = localStore.getItems();
     for (const child of childNode) {
       const button: HTMLButtonElement = document.createElement('button');
-      let activeClass = '';
+      const buttonMin: HTMLButtonElement = document.createElement('button');
+      button.className = 'button-plus';
+      button.innerHTML = '+';
+      buttonMin.className = 'button-minus';
+      buttonMin.innerHTML = '-';
 
-      if (itemStore.includes(child.id)) {
-        activeClass = 'active';
-      }
-
-      button.className = `button-card ${activeClass}`;
-      button.innerHTML = 'ADD TO CART';
       button.onclick = (): void => {
-        if (localStore.getItems().length === 21) {
-          button.classList.remove('active');
-        }
-        button.classList.toggle('active');
-
         let price: number = 0;
         for (let obj of info) {
           //! price of card
@@ -86,7 +80,21 @@ class Curt {
         }
         this.handlerLocalStorage(button, child.id, price); //* child.id - el.id
       };
+
+      buttonMin.onclick = (): void => {
+        let price: number = 0;
+        for (let obj of info) {
+          //! price of card
+          if (obj.id === child.id) {
+            price = obj.price;
+            console.log(obj.price);
+          }
+        }
+        this.handlerLocalStorage(button, child.id, price); //* child.id - el.id
+      };
+
       child.lastElementChild?.append(button);
+      child.lastElementChild?.append(buttonMin);
     }
     main.append(this.content);
   }

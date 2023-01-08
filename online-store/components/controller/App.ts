@@ -9,7 +9,7 @@ class App extends AppModel {
     this.model = new AppModel();
   }
 
-  //!
+  //! Hash
 
   renderNewPage(idPage: string) {
     const currentPageHTML = document.querySelector('.render');
@@ -59,8 +59,8 @@ class App extends AppModel {
     this.model.startCards();
     this.renderSort();
     this.renderSearch();
-    this.renderCategory(); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    this.renderDiscount(); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    this.renderCategory();
+    this.renderDiscount();
     this.renderPopular();
     this.renderCompany();
     this.renderSliderPrice();
@@ -73,14 +73,12 @@ class App extends AppModel {
   startCurt(): void {
     this.model.addHeader();
     this.addFooter();
-    // this.model.startCards();
   }
 
   //! Products
   startProducts(): void {
     this.model.addHeader();
     this.addFooter();
-    // this.model.startCards();
   }
 
   //! 404
@@ -114,13 +112,12 @@ class App extends AppModel {
   }
 
   renderCategory(): void {
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     const filterStore: { [key: string]: boolean } = localStore.getFilter();
     const select = <HTMLInputElement[]>[...document.querySelectorAll('.category input')];
     select.forEach((elem: HTMLInputElement): void => {
       elem.onchange = (): void => {
         localStore.putFilter(elem.name, elem.checked);
-        this.model.findCategory(elem.name, elem.checked); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        this.model.findCategory(elem.name, elem.checked);
       };
     });
     select.forEach((elem: HTMLInputElement): void => {
@@ -133,7 +130,6 @@ class App extends AppModel {
   }
 
   renderDiscount(): void {
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     const filterStore: { [key: string]: boolean } = localStore.getFilter();
     const select = <HTMLInputElement[]>[...document.querySelectorAll('.discount input')];
     select.forEach((elem: HTMLInputElement): void => {
@@ -266,8 +262,8 @@ class App extends AppModel {
     const text = <HTMLInputElement>document.querySelector('.search-input');
     const popular = <HTMLInputElement>document.querySelector('.popular input');
     const company = <HTMLInputElement[]>[...document.querySelectorAll('.company input')];
-    const discount = <HTMLInputElement[]>[...document.querySelectorAll('.discount input')]; //! !!!!!!!!!!!!!!!!!!!
-    const category = <HTMLInputElement[]>[...document.querySelectorAll('.category input')]; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    const discount = <HTMLInputElement[]>[...document.querySelectorAll('.discount input')];
+    const category = <HTMLInputElement[]>[...document.querySelectorAll('.category input')];
     const sliderItem = <HTMLInputElement[]>[...document.querySelectorAll('.container-item input[type="range"]')];
     const minItem = <HTMLElement>document.querySelector('.min-item');
     const maxItem = <HTMLElement>document.querySelector('.max-item');
@@ -286,21 +282,19 @@ class App extends AppModel {
       elem.checked = false;
     });
     discount.forEach((elem: HTMLInputElement): void => {
-      //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       localStore.putFilter(elem.name, false);
       this.model.findDiscount(elem.name, false);
       elem.checked = false;
     });
     category.forEach((elem: HTMLInputElement): void => {
-      //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       localStore.putFilter(elem.name, false);
       this.model.findCategory(elem.name, false);
       elem.checked = false;
     });
-    localStore.putSliderPrice('120', '520'); //! --520
-    this.model.findPrice('120', '520'); //! -- 520
+    localStore.putSliderPrice('120', '520');
+    this.model.findPrice('120', '520');
     sliderPrice[0].value = '120';
-    sliderPrice[1].value = '520'; //! 520
+    sliderPrice[1].value = '520';
     minPrice.innerHTML = sliderPrice[0].value;
     maxPrice.innerHTML = sliderPrice[1].value;
     localStore.putSliderItems('1', '15');
@@ -325,7 +319,7 @@ class App extends AppModel {
     resetSettings.onclick = () => {
       this.resetFiltersAndSettings();
       this.view.drawHeader(0, 0);
-      localStore.putItems('none', 0); //! add second argument
+      localStore.putItems('none', 0);
       select.value = '1';
       localStore.putFilterSort(select.value);
       this.model.doSort(select.value);
