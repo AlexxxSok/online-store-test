@@ -1,0 +1,33 @@
+.modal__window {
+  display: none;
+  width: 900px;
+  height: 500px;
+  background-color: #121212;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 40px;
+  margin: auto;
+  z-index: 2;
+  left: 52px;
+  right: 0;
+  position: fixed;
+  top: 0;
+  border-radius: 5px;
+  bottom: 32px;
+  transition: 1s;
+  animation-name: slidein;
+  animation-duration: 0.5s;
+  cursor: pointer;
+  border: 80px solid #000000;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
