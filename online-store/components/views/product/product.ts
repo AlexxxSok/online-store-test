@@ -2,6 +2,7 @@ import './product.scss';
 import products from '../../../server/products.json';
 import { ProductsInterface } from '../../appTypes/Interface';
 import localStore from '../../localStorage/LocalStorage';
+import Cards from '../main/cards/Cards';
 
 function renderHtmlProduct(prod: ProductsInterface) {
   return `
@@ -77,22 +78,22 @@ function renderProduct(idPage: string) {
   });
 });
   const btnAdd = <HTMLButtonElement>document.querySelector('.add-btn');
-  // btnAdd.onclick = (): void => {
-  //   if (localStore.getItems().length === 21) {
-  //     btnAdd.classList.remove('active');
-  //   }
-  //   btnAdd.classList.toggle('active');
+  btnAdd.onclick = (): void => {
+    if (localStore.getItems().length === 21) {
+      btnAdd.classList.remove('active');
+    }
+    btnAdd.classList.toggle('active');
 
-  //   let price: number = 0;
-  //   for (let obj of products) {
-  //     //! price of card
-  //     if (obj.id === child.id) {
-  //       price = obj.price;
-  //     }
-  //   }
-
-  //   this.handlerLocalStorage(btnAdd, child.id, price); //* child.id - el.id
-  // };
+    let price: number = 0;
+    for (let obj of products) {
+      //! price of card
+      if (obj.id === btnAdd.id) {
+        price = obj.price;
+      }
+    }
+    const cards = new Cards
+    cards.handlerLocalStorage(btnAdd, btnAdd.id, price); //* child.id - el.id
+  };
 }
 
 export default renderProduct;

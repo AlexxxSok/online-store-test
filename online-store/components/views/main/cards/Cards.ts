@@ -15,7 +15,7 @@ class Cards {
     this.classNameActive = 'active';
   }
 
-  private handlerLocalStorage(element: HTMLButtonElement, id: string, price: number) {
+  handlerLocalStorage(element: HTMLButtonElement, id: string, price: number) {
     const cart = <HTMLDivElement>document.querySelector('.cart');
     const sum = <HTMLDivElement>document.querySelector('.total-sum'); //! total sum
     const modal = <HTMLDivElement>document.querySelector('.modal__window');

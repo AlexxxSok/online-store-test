@@ -27,6 +27,9 @@ class App extends AppModel {
       render.innerHTML = '';
       this.start();
     } else if (idPage === 'curt') {
+      const render = <HTMLDivElement>document.querySelector('.render');
+      render.classList.remove('render-card');
+      render.innerHTML = '';
       console.log('render curt');
       this.model.startCurt();
     } else if (idPage.includes('items')) {
