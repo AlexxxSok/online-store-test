@@ -59,7 +59,7 @@ class Cards {
           return `<div class="cards__inner" id="${el.id}">
                   <p class="name-item">${el.name}</p>
                   <div class="cards__content-item">
-                  <a href="#items/${el.id}">
+                  <a class="cards-item" href="#items/${el.id}">
                     <img class="cards-image" src=${el.image} alt="lamp">
                   </a>  
                     <ul class="list">
@@ -111,6 +111,7 @@ class Cards {
       //* item +
       buttonView.onclick = (): void => {
         buttonView.classList.add('show');
+        alert('click!');
       };
       child.lastElementChild?.append(buttonView);
 

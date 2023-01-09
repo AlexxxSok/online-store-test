@@ -1,5 +1,6 @@
 import AppModel from '../model/AppModel';
 import localStore from '../localStorage/LocalStorage';
+import renderProduct from '../views/product/product'
 
 class App extends AppModel {
   model: AppModel;
@@ -21,13 +22,16 @@ class App extends AppModel {
 
     if (idPage === '') {
       console.log('render main');
+      const render = <HTMLDivElement>document.querySelector('.render');
+      render.classList.remove('render-card');
+      render.innerHTML = '';
       this.start();
     } else if (idPage === 'curt') {
       console.log('render curt');
       this.model.startCurt();
-    } else if (idPage === 'item') {
+    } else if (idPage.includes('items')) {
       console.log('render item');
-      this.startProducts();
+      this.startProducts(idPage);
     } else {
       this.startError();
     }
@@ -76,9 +80,10 @@ class App extends AppModel {
   }
 
   //! Products
-  startProducts(): void {
+  startProducts(idPage: string): void {
     this.model.addHeader();
     this.addFooter();
+    renderProduct(idPage);
   }
 
   //! 404
