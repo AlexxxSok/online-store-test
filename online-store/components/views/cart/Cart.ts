@@ -16,6 +16,7 @@ class Cart {
   private handlerLocalStorage(element: HTMLButtonElement, id: string, price: number) {
     const cart = <HTMLDivElement>document.querySelector('.cart');
     const sum = <HTMLDivElement>document.querySelector('.total-sum'); //! total sum
+    const sumNum = <HTMLDivElement>document.querySelector('.summ_num');
     const sumSum = <HTMLDivElement>document.querySelector('.summ_sum');
     const { pushProduct, products } = localStore.putItems(id, price);
     const totalSum = localStore.getSum();
@@ -23,6 +24,7 @@ class Cart {
     cart.innerHTML = `${products.length}`;
     sum.innerHTML = `${totalSum}`; //! total sum
     sumSum.innerHTML = `${totalSum} $`;
+    sumNum.innerHTML = `${products.length} pcs.`;
     // let  total: number = prod.map(el => Object.values(el)).flat().map(el => +el).filter(Boolean).reduce((acc, el) => acc + el); //! new sum
   }
 
@@ -98,16 +100,17 @@ class Cart {
     const main = <HTMLElement>document.querySelector('main');
     let summary: HTMLElement = document.createElement('div');
     const headerTotal: HTMLElement | null = document.querySelector('.total-sum');
+    const headerCart: HTMLElement | null = document.querySelector('.cart');
     let sumToSummary = headerTotal?.innerHTML;
+    let quantToSummary = headerCart?.innerHTML;
     summary.className = 'summary';
     summary.innerHTML = `
             <div class="cards_summary" id="summary">
                 <p class="summary_name">Summary</p>
                 <div class="summary_content">
-                <div class="summary_products">Products <p class="summ_num"></p></div>
+                <div class="summary_products">Products <p class="summ_num">${quantToSummary} pcs.</p></div>
                 <div class="summary_total">Total <p class="summ_sum">${sumToSummary} $</p></div>
-                <div class="summary_total_promo">Total <p class="summ_sum_code"></p> </div>
-                <input class="summary_products"  placeholder="Enter promo code" type="search" value>
+                <input class="summary_input"  placeholder="Enter promo code" type="search" value>
                 <p class="discount_code">Promo for test: 'RS', 'TECH'</p>
                 <button class="button-buy">BUY NOW</button>
                 </div>

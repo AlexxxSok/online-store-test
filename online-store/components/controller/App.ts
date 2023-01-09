@@ -14,7 +14,8 @@ class App extends AppModel {
   renderNewPage(idPage: string) {
     const currentPageHTML = document.querySelector('.render');
     const cardsBoard = document.querySelector('.cards');
-    const cartBoard = document.querySelector('.cards_summary');
+    const cartBoard = document.querySelector('.summary');
+
     if (currentPageHTML && cardsBoard) {
       currentPageHTML.innerHTML = '';
       cardsBoard.remove();
