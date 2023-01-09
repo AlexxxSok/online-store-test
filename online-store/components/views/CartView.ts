@@ -1,18 +1,18 @@
-import Curt from './curt/Curt';
+import Cart from './cart/Cart';
 import { ProductsInterface } from '../appTypes/Interface';
 import Header from './header/Header';
 import Footer from './footer/Footer';
 
-class CurtView {
+class CartView {
   header: Header;
 
-  curt: Curt;
+  cart: Cart;
 
   footer: Footer;
 
   constructor() {
     this.header = new Header();
-    this.curt = new Curt();
+    this.cart = new Cart();
     this.footer = new Footer();
   }
 
@@ -21,11 +21,15 @@ class CurtView {
   }
 
   drawCards(data: ProductsInterface[]): void {
-    this.curt.renderCurt(data);
+    this.cart.renderCart(data);
+  }
+
+  drawSummary(): void {
+    this.cart.renderSummary();
   }
 
   drawFooter(): void {
     this.footer.render();
   }
 }
-export default CurtView;
+export default CartView;

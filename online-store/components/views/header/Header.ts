@@ -10,7 +10,7 @@ class Header {
                     <div class ="total-sum">${sum}</div>
                     <div class ="dollar">$</div>
                   </div>
-                  <a href="#curt">
+                  <a href="#cart">
                   <div class="inner-cart">
                     <p class="cart-title">Cart</p>
                     <div class ="cart">${item}</div>

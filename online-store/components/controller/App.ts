@@ -14,17 +14,19 @@ class App extends AppModel {
   renderNewPage(idPage: string) {
     const currentPageHTML = document.querySelector('.render');
     const cardsBoard = document.querySelector('.cards');
+    const cartBoard = document.querySelector('.cards_summary');
     if (currentPageHTML && cardsBoard) {
       currentPageHTML.innerHTML = '';
       cardsBoard.remove();
+      cartBoard?.remove();
     }
 
     if (idPage === '') {
       console.log('render main');
       this.start();
-    } else if (idPage === 'curt') {
-      console.log('render curt');
-      this.model.startCurt();
+    } else if (idPage === 'cart') {
+      console.log('render cart');
+      this.model.startCart();
     } else if (idPage === 'item') {
       console.log('render item');
       this.startProducts();
@@ -69,8 +71,8 @@ class App extends AppModel {
     this.resetSettings();
   }
 
-  //! Curt
-  startCurt(): void {
+  //! Cart
+  startCart(): void {
     this.model.addHeader();
     this.addFooter();
   }

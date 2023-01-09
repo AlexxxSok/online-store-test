@@ -30,21 +30,6 @@ class Cards {
 
     cart.innerHTML = `${products.length}`;
     sum.innerHTML = `${totalSum}`; //! total sum
-
-    // let  total: number = prod.map(el => Object.values(el)).flat().map(el => +el).filter(Boolean).reduce((acc, el) => acc + el); //! new sum
-
-    // if (products.length <= 20) {
-    //   cart.innerHTML = `${products.length}`;
-    //   sum.innerHTML = `${totalSum}`; //! total sum
-    // }
-    // if (products.length > 20) {
-    //   modal.style.display = 'flex';
-    // } else if (products.length <= 20) {
-    //   modal.style.display = 'none';
-    // }
-    // modal.onclick = () => {
-    //   modal.style.display = 'none';
-    // };
   }
 
   renderCards(data: ProductsInterface[]): void {

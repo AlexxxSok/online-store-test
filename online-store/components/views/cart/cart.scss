@@ -29,13 +29,13 @@
       font-weight: 600;
     }
 
-    .curt__content-item {
+    .cart__content-item {
       display: flex;
       width: 720px;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
-      height: 380px;
+      height: 180px;
       margin-top: 5px;
       background-color: #121212;
       animation-name: slidein;
@@ -45,8 +45,9 @@
       .cards-image {
         background-position: center center;
         background: transparent;
-        height: 200px;
+        height: 40%;
         margin-bottom: 10px;
+        border-radius: 15px;
       }
 
       .list {
@@ -73,7 +74,7 @@
       .button-minus {
         width: 30px;
         height: 30px;
-        margin-top: 10px;
+        margin-right: 10px;
         background-color: #3b9e4d;
         color: #ffffff;
         font-size: 20px;
@@ -92,6 +93,23 @@
         background-color: #b0976d;
         transition: 0.8s;
       }
+    }
+  }
+}
+
+.summary {
+  width: 20%;
+
+  .cards_summary {
+    width: 100%;
+    margin-top: 30px;
+    font-size: 20px;
+
+    .summary_name {
+      font-size: 30px;
+    }
+    .discount_code {
+      font-size: 12px;
     }
   }
 }

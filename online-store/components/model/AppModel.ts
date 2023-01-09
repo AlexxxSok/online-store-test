@@ -1,6 +1,6 @@
 import { ProductsInterface, FilterInterface } from '../appTypes/Interface';
 import AppView from '../views/AppView';
-import CurtView from '../views/CurtView'; //! new
+import CartView from '../views/CartView'; //! new
 import localStore from '../localStorage/LocalStorage';
 import products from '../../server/products.json';
 class AppModel {
@@ -12,7 +12,7 @@ class AppModel {
 
   view: AppView;
 
-  curtItems: CurtView; //! new
+  cartItems: CartView; //! new
 
   constructor() {
     this.products = products;
@@ -27,7 +27,7 @@ class AppModel {
     };
     this.filterProducts = [];
     this.view = new AppView();
-    this.curtItems = new CurtView(); //! new
+    this.cartItems = new CartView(); //! new
   }
 
   startCards(): void {
@@ -48,19 +48,20 @@ class AppModel {
     }
   }
 
-  //! CURT
-  startCurt(): void {
-    const curtProductsId: string[] = localStore.getItems();
-    const curtData: ProductsInterface[] = [];
+  //! CaRT
+  startCart(): void {
+    const cartProductsId: string[] = localStore.getItems();
+    const cartData: ProductsInterface[] = [];
     for (let obj of products) {
-      for (let string of curtProductsId) {
+      for (let string of cartProductsId) {
         if (obj.id === string) {
-          curtData.push(obj);
+          cartData.push(obj);
         }
       }
     }
 
-    this.curtItems.drawCards(curtData);
+    this.cartItems.drawCards(cartData);
+    this.cartItems.drawSummary();
   }
 
   //!
