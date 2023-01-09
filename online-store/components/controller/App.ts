@@ -1,6 +1,6 @@
 import AppModel from '../model/AppModel';
 import localStore from '../localStorage/LocalStorage';
-import renderProduct from '../views/product/product'
+import renderProduct from '../views/product/product';
 
 class App extends AppModel {
   model: AppModel;
@@ -24,7 +24,6 @@ class App extends AppModel {
     }
 
     if (idPage === '') {
-      console.log('render main');
       const render = <HTMLDivElement>document.querySelector('.render');
       render.classList.remove('render-card');
       render.innerHTML = '';
@@ -33,10 +32,9 @@ class App extends AppModel {
       const render = <HTMLDivElement>document.querySelector('.render');
       render.classList.remove('render-card');
       render.innerHTML = '';
-      console.log('render cart');
+
       this.model.startCart();
     } else if (idPage.includes('items')) {
-      console.log('render item');
       this.startProducts(idPage);
     } else {
       this.startError();
@@ -46,7 +44,6 @@ class App extends AppModel {
   enableRouteChange() {
     window.addEventListener('hashchange', () => {
       const hash = window.location.hash.slice(1);
-      console.log(hash); //!
       this.renderNewPage(hash);
     });
   }
