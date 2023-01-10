@@ -16,11 +16,16 @@ class App extends AppModel {
     const currentPageHTML = document.querySelector('.render');
     const cardsBoard = document.querySelector('.cards');
     const cartBoard = document.querySelector('.summary');
+    const errorPage = document.querySelector('.modal__window');
 
     if (currentPageHTML && cardsBoard) {
       currentPageHTML.innerHTML = '';
       cardsBoard.remove();
       cartBoard?.remove();
+    }
+
+    if (errorPage) {
+      errorPage.remove();
     }
 
     if (idPage === '') {

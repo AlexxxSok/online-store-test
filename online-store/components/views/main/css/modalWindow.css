@@ -1,0 +1,54 @@
+.modal__window {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 900px;
+  height: 500px;
+  color: red;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 40px;
+  margin: auto;
+  z-index: 2;
+  left: 52px;
+  right: 0;
+  position: fixed;
+  top: 0;
+  border-radius: 5px;
+  bottom: 32px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  cursor: pointer;
+  border: 2px solid #eb1717;
+}
+
+.modal__window.active {
+  display: block;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=modalWindow.css.map */

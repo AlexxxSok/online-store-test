@@ -1,8 +1,8 @@
 .modal__window {
-  display: none;
+  display: flex;
   width: 900px;
   height: 500px;
-  background-color: #121212;
+  color: red;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -19,7 +19,11 @@
   animation-name: slidein;
   animation-duration: 0.5s;
   cursor: pointer;
-  border: 80px solid #000000;
+  border: 2px solid #eb1717;
+}
+
+.modal__window.active {
+  display: block;
 }
 
 @keyframes slidein {

@@ -5,10 +5,15 @@
   padding-right: 0;
   padding-top: 0;
 }
+
 .breadscrumbs {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 20px auto;
   font-size: 20px;
 }
@@ -30,6 +35,8 @@
 
 .card-body {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 20px;
 }
@@ -95,10 +102,11 @@
 .card-btn:hover {
   color: #000000;
   background-color: #b0976d;
+  -webkit-transition: 0.8s;
   transition: 0.8s;
 }
 
 .card-btn.active {
   color: #000000;
   background-color: #b0976d;
-}
+}/*# sourceMappingURL=product.css.map */

@@ -57,9 +57,12 @@ class Cart {
     const itemStore: string[] = localStore.getItems();
     for (const child of childNode) {
       const button: HTMLButtonElement = document.createElement('button');
+      const itemQuantity: HTMLElement = document.createElement('p');
       const buttonMin: HTMLButtonElement = document.createElement('button');
       button.className = 'button-plus';
       button.innerHTML = '+';
+      itemQuantity.className = 'item-quantity';
+      itemQuantity.innerHTML = '1';
       buttonMin.className = 'button-minus';
       buttonMin.innerHTML = '-';
 
@@ -87,6 +90,7 @@ class Cart {
       };
 
       child.lastElementChild?.append(button);
+      child.lastElementChild?.append(itemQuantity);
       child.lastElementChild?.append(buttonMin);
     }
 
