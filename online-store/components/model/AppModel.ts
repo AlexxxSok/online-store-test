@@ -115,7 +115,6 @@ class AppModel {
   }
 
   findCategory(value: string, check: boolean): void {
-    //! ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
     if (check) {
       this.filters.category.push(value);
     } else {
@@ -126,7 +125,6 @@ class AppModel {
   }
 
   findDiscount(value: string, check: boolean): void {
-    //! ZZZZZZZZZZZZZZZZZz
     if (check) {
       this.filters.discount.push(value);
     } else {

@@ -25,7 +25,6 @@ class Cart {
     sum.innerHTML = `${totalSum}`; //! total sum
     sumSum.innerHTML = `${totalSum} $`;
     sumNum.innerHTML = `${products.length} pcs.`;
-    // let  total: number = prod.map(el => Object.values(el)).flat().map(el => +el).filter(Boolean).reduce((acc, el) => acc + el); //! new sum
   }
 
   renderCart(data: ProductsInterface[]): void {
@@ -82,7 +81,6 @@ class Cart {
           //! price of card
           if (obj.id === child.id) {
             price = obj.price;
-            console.log(obj.price);
           }
         }
         this.handlerLocalStorage(button, child.id, price); //* child.id - el.id
