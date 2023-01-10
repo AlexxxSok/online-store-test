@@ -3,6 +3,7 @@ import products from '../../../server/products.json';
 import { ProductsInterface } from '../../appTypes/Interface';
 import localStore from '../../localStorage/LocalStorage';
 import Cards from '../main/cards/Cards';
+import renderBuyProduct from '../buy/buy';
 
 function renderHtmlProduct(prod: ProductsInterface) {
   return `
@@ -53,7 +54,7 @@ function renderHtmlProduct(prod: ProductsInterface) {
       <div class="card-buy">
         <h2>$ ${prod.price}</h2>
         <button id="${prod.id}" class="card-btn add-btn">Add to cart</button>
-        <button class="card-btn buy-btn">Buy now</button>
+        <a href="#curt"><button class="card-btn buy-btn">Buy now</button></a>
       </div>
     </div>
   </section>
@@ -71,13 +72,16 @@ function renderProduct(idPage: string) {
 
   const thumbImgs = document.querySelectorAll('.thumb-img');
   thumbImgs.forEach((item) => {
-  item.addEventListener('click', (e) => {
-    const mainImg = <HTMLImageElement>document.querySelector('.main-img');
-    let img = <HTMLImageElement>e.currentTarget;
-    mainImg.src = img.src;
+    item.addEventListener('click', (e) => {
+      const mainImg = <HTMLImageElement>document.querySelector('.main-img');
+      let img = <HTMLImageElement>e.currentTarget;
+      mainImg.src = img.src;
+    });
   });
-});
+
   const btnAdd = <HTMLButtonElement>document.querySelector('.add-btn');
+  const btnBuy = <HTMLButtonElement>document.querySelector('.buy-btn');
+  
   btnAdd.onclick = (): void => {
     if (localStore.getItems().length === 21) {
       btnAdd.classList.remove('active');
@@ -93,6 +97,24 @@ function renderProduct(idPage: string) {
     }
     const cards = new Cards
     cards.handlerLocalStorage(btnAdd, btnAdd.id, price); //* child.id - el.id
+  };
+
+  btnBuy.onclick = (): void => {
+    if (localStore.getItems().length === 21) {
+      btnAdd.classList.remove('active');
+    }
+    btnAdd.classList.toggle('active');
+
+    let price: number = 0;
+    for (let obj of products) {
+      //! price of card
+      if (obj.id === btnAdd.id) {
+        price = obj.price;
+      }
+    }
+    const cards = new Cards
+    cards.handlerLocalStorage(btnAdd, btnAdd.id, price); //* child.id - el.id
+    renderBuyProduct();
   };
 }
 

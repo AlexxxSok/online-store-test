@@ -1,4 +1,4 @@
-import './bank.scss';
+// import './bank.scss';
 import info from '../../../server/products.json'; //! ADD
 import { doc } from 'prettier';
 class Bank {
