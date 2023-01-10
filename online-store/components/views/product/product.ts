@@ -81,7 +81,7 @@ function renderProduct(idPage: string) {
 
   const btnAdd = <HTMLButtonElement>document.querySelector('.add-btn');
   const btnBuy = <HTMLButtonElement>document.querySelector('.buy-btn');
-
+  
   btnAdd.onclick = (): void => {
     if (localStore.getItems().length === 21) {
       btnAdd.classList.remove('active');
