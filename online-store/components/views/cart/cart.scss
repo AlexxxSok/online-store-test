@@ -29,13 +29,13 @@
       font-weight: 600;
     }
 
-    .curt__content-item {
+    .cart__content-item {
       display: flex;
       width: 720px;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
-      height: 380px;
+      height: 180px;
       margin-top: 5px;
       background-color: #121212;
       animation-name: slidein;
@@ -45,8 +45,9 @@
       .cards-image {
         background-position: center center;
         background: transparent;
-        height: 200px;
+        height: 40%;
         margin-bottom: 10px;
+        border-radius: 15px;
       }
 
       .list {
@@ -73,7 +74,7 @@
       .button-minus {
         width: 30px;
         height: 30px;
-        margin-top: 10px;
+        margin-right: 10px;
         background-color: #3b9e4d;
         color: #ffffff;
         font-size: 20px;
@@ -93,6 +94,74 @@
         transition: 0.8s;
       }
     }
+  }
+}
+
+.summary {
+  width: 30%;
+  height: 500px;
+  margin-left: 40px;
+
+  .cards_summary {
+    width: 100%;
+    margin-top: 30px;
+
+    .summary_name {
+      font-size: 30px;
+      color: #d3d631;
+    }
+    .summary_products {
+      color: #ab3535;
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: 500;
+      .summ_num {
+        color: black;
+        display: inline;
+      }
+    }
+    .summary_total {
+      color: #ab3535;
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: 500;
+      .summ_sum {
+        color: black;
+        display: inline;
+      }
+    }
+    .discount_code {
+      font-size: 12px;
+    }
+  }
+
+  .summary_input {
+    background: transparent;
+    border: 2px solid #201d1d;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  .discount_code {
+    color: #c9e75e;
+    font-size: 18px;
+  }
+
+  .button-buy {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: red;
+    color: white;
+    font-weight: 700;
   }
 }
 

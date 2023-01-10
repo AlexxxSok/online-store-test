@@ -1,6 +1,6 @@
 import AppModel from '../model/AppModel';
 import localStore from '../localStorage/LocalStorage';
-import renderProduct from '../views/product/product'
+import renderProduct from '../views/product/product';
 
 class App extends AppModel {
   model: AppModel;
@@ -15,25 +15,26 @@ class App extends AppModel {
   renderNewPage(idPage: string) {
     const currentPageHTML = document.querySelector('.render');
     const cardsBoard = document.querySelector('.cards');
+    const cartBoard = document.querySelector('.summary');
+
     if (currentPageHTML && cardsBoard) {
       currentPageHTML.innerHTML = '';
       cardsBoard.remove();
+      cartBoard?.remove();
     }
 
     if (idPage === '') {
-      console.log('render main');
       const render = <HTMLDivElement>document.querySelector('.render');
       render.classList.remove('render-card');
       render.innerHTML = '';
       this.start();
-    } else if (idPage === 'curt') {
+    } else if (idPage === 'cart') {
       const render = <HTMLDivElement>document.querySelector('.render');
       render.classList.remove('render-card');
       render.innerHTML = '';
-      console.log('render curt');
-      this.model.startCurt();
+
+      this.model.startCart();
     } else if (idPage.includes('items')) {
-      console.log('render item');
       this.startProducts(idPage);
     } else {
       this.startError();
@@ -43,7 +44,6 @@ class App extends AppModel {
   enableRouteChange() {
     window.addEventListener('hashchange', () => {
       const hash = window.location.hash.slice(1);
-      console.log(hash); //!
       this.renderNewPage(hash);
     });
   }
@@ -76,8 +76,8 @@ class App extends AppModel {
     this.resetSettings();
   }
 
-  //! Curt
-  startCurt(): void {
+  //! Cart
+  startCart(): void {
     this.model.addHeader();
     this.addFooter();
   }

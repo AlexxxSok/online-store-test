@@ -94,6 +94,31 @@ class LocalStorage {
     return newSum;
   }
 
+  //! Cart
+
+  putCartItems(id: string, price: number): { products: string[] } {
+    let products: string[] = this.getItems();
+    const index: number = products.indexOf(id); //* index - -1 (item is in the cart) or num. (of new item = id);
+    if (id === 'none') {
+      //* start method without id or reset (App)
+
+      products = [];
+      this.resetSum();
+    }
+    if (index === -1 && id !== 'none') {
+      products.push(id);
+
+      this.putSum(price); //! new
+    } else {
+      products.splice(index, 1); //* quantity of items in the cart
+      this.removeSum(price); //! new
+    }
+
+    localStorage.setItem(this.keyItems, JSON.stringify(products));
+
+    return { products };
+  }
+
   //! end
 
   getSortProducts(): ProductsInterface[] {

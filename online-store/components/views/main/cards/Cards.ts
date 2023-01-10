@@ -29,22 +29,7 @@ class Cards {
     }
 
     cart.innerHTML = `${products.length}`;
-    sum.innerHTML = `${totalSum}`; //! total sum
-
-    // let  total: number = prod.map(el => Object.values(el)).flat().map(el => +el).filter(Boolean).reduce((acc, el) => acc + el); //! new sum
-
-    // if (products.length <= 20) {
-    //   cart.innerHTML = `${products.length}`;
-    //   sum.innerHTML = `${totalSum}`; //! total sum
-    // }
-    // if (products.length > 20) {
-    //   modal.style.display = 'flex';
-    // } else if (products.length <= 20) {
-    //   modal.style.display = 'none';
-    // }
-    // modal.onclick = () => {
-    //   modal.style.display = 'none';
-    // };
+    sum.innerHTML = `${totalSum}`;
   }
 
   renderCards(data: ProductsInterface[]): void {
@@ -79,7 +64,6 @@ class Cards {
     const itemStore: string[] = localStore.getItems();
     for (const child of childNode) {
       const button: HTMLButtonElement = document.createElement('button');
-      const buttonView: HTMLElement = document.createElement('view'); //*
       let activeClass = '';
 
       if (itemStore.includes(child.id)) {
@@ -87,9 +71,9 @@ class Cards {
       }
 
       button.className = `button-card ${activeClass}`;
-      buttonView.className = 'view-card'; //*
+
       button.innerHTML = 'ADD TO CART';
-      buttonView.innerHTML = 'Details';
+
       button.onclick = (): void => {
         if (localStore.getItems().length === 21) {
           button.classList.remove('active');
@@ -107,15 +91,6 @@ class Cards {
         this.handlerLocalStorage(button, child.id, price); //* child.id - el.id
       };
       child.lastElementChild?.append(button);
-
-      //* item +
-      buttonView.onclick = (): void => {
-        buttonView.classList.add('show');
-        alert('click!');
-      };
-      child.lastElementChild?.append(buttonView);
-
-      //*
     }
     main.append(this.content);
   }
