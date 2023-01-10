@@ -1,0 +1,23 @@
+body.body_hidden {
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 150vh;
+  background: rgba(41, 41, 41, 0.6);
+  z-index: 2;     
+}
+
+.buy {
+  margin: 150px auto;
+  background: rgb(232, 252, 184);
+  position: relative;
+  max-width: 640px;
+  min-width: 320px;
+  z-index: 5;
+  border-radius: 5px;
+}
