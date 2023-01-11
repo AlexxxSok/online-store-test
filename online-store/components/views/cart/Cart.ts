@@ -2,6 +2,7 @@ import './cart.scss';
 import { ProductsInterface } from '../../appTypes/Interface';
 import localStore from '../../localStorage/LocalStorage';
 import info from '../../../server/products.json'; //! ADD
+import renderBuyProduct from '../buy/buy';
 import { doc } from 'prettier';
 class Cart {
   products: ProductsInterface[];
@@ -25,7 +26,6 @@ class Cart {
     sum.innerHTML = `${totalSum}`; //! total sum
     sumSum.innerHTML = `${totalSum} $`;
     sumNum.innerHTML = `${products.length} pcs.`;
-    // let  total: number = prod.map(el => Object.values(el)).flat().map(el => +el).filter(Boolean).reduce((acc, el) => acc + el); //! new sum
   }
 
   renderCart(data: ProductsInterface[]): void {
@@ -58,9 +58,12 @@ class Cart {
     const itemStore: string[] = localStore.getItems();
     for (const child of childNode) {
       const button: HTMLButtonElement = document.createElement('button');
+      const itemQuantity: HTMLElement = document.createElement('p');
       const buttonMin: HTMLButtonElement = document.createElement('button');
       button.className = 'button-plus';
       button.innerHTML = '+';
+      itemQuantity.className = 'item-quantity';
+      itemQuantity.innerHTML = '1';
       buttonMin.className = 'button-minus';
       buttonMin.innerHTML = '-';
 
@@ -82,13 +85,13 @@ class Cart {
           //! price of card
           if (obj.id === child.id) {
             price = obj.price;
-            console.log(obj.price);
           }
         }
         this.handlerLocalStorage(button, child.id, price); //* child.id - el.id
       };
 
       child.lastElementChild?.append(button);
+      child.lastElementChild?.append(itemQuantity);
       child.lastElementChild?.append(buttonMin);
     }
 
@@ -123,7 +126,7 @@ class Cart {
 
     if (buttonBuy !== null) {
       buttonBuy.onclick = (): void => {
-        console.log('buy goods');
+        renderBuyProduct();
       };
     }
   }

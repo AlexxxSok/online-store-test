@@ -2,11 +2,11 @@ import './modalWindow.scss';
 
 class ModalWindow {
   renderModalWindow(): void {
-    const main = <HTMLElement>document.querySelector('main');
+    const render = <HTMLElement>document.querySelector('.render');
     const modal: HTMLDivElement = document.createElement('div');
     modal.className = 'modal__window';
     modal.innerHTML = 'Error 404, this page not found!!! ';
-    main.append(modal);
+    render.append(modal);
   }
 }
 
