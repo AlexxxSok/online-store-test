@@ -10,13 +10,13 @@ function renderBuyProduct() {
           <div class="bank_person">
             <h2 class="personal">Personal details</h2>
             <div class="form name">
-              <input class="input_name" type="text" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" placeholder="Name" required>
+              <input class="input_name" type="text" pattern="[A-zА-я\s]{3}" placeholder="Name" required>
             </div>
             <div class="form phone">
               <input class="input_phone" type="tel" pattern="[\+][0-9]{9,}" placeholder="Phone number" required>
             </div>
             <div class="form address">
-              <input class="input_address" type="text" placeholder="Delivery address" required>
+              <input class="input_address" type="text" pattern="[A-zА-я]{5}" placeholder="Delivery address" required>
             </div>
             <div class="form email">
               <input class="input_email" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" placeholder="Email" required>
@@ -53,7 +53,12 @@ function renderBuyProduct() {
   overlay.addEventListener('click', closeBuyProduct);
   
   const name = <HTMLInputElement>document.querySelector('.input_name');
-  // name.addEventListener('click', checkName);
+  name.classList.add('invalid');
+  name.addEventListener('input', checkName);
+
+  const address = <HTMLInputElement>document.querySelector('.input_address');
+  address.classList.add('invalid');
+  address.addEventListener('input', checkAddress);
 
   const btnConfirm = <HTMLButtonElement>document.querySelector('.button-card');
   btnConfirm.addEventListener('click', completPuchase);
@@ -73,6 +78,28 @@ function completPuchase() {
     closeBuyProduct();
     window.location.href = "/#"
   }, 3000);
+}
+
+function checkName() { 
+  const name = <HTMLInputElement>document.querySelector('.input_name');
+  let isValid = false;  
+  const words = name.value.split(' ');
+  words.forEach((word) => {
+    if (words.length === 2 && word.length > 2) {
+      name.classList.remove('invalid');
+    } else name.classList.add('invalid');
+  })
+}
+
+function checkAddress() { 
+  const address = <HTMLInputElement>document.querySelector('.input_address');
+  let isValid = false;  
+  const words = address.value.split(' ');
+  words.forEach((word) => {
+    if (words.length === 3 && word.length > 4) {
+      address.classList.remove('invalid');
+    } else address.classList.add('invalid');
+  })
 }
 
 

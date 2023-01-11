@@ -78,12 +78,14 @@ body.body_hidden {
   margin: 2% auto;
 }
 
+.invalid {
+  border: 1px solid red;
+}
+
 .card_number:invalid,
 .card_date_input:invalid,
 .card_cvv_input:invalid,
 .input_email:invalid,
-.input_address:invalid,
-.input_name:invalid,
 .input_phone:invalid {
   border: 1px solid red;
 }
