@@ -27,9 +27,11 @@ body.body_hidden {
   padding: 1%;
   border-radius: 20px;
   width: 400px;
+  min-height: 320px;
   background-color: #121212;
   z-index: 99;
   position: relative;
+  text-align: center;
 }
 
 .bank_content {
@@ -74,6 +76,16 @@ body.body_hidden {
   font-size: 90%;
   text-align: center;
   margin: 2% auto;
+}
+
+.card_number:invalid,
+.card_date_input:invalid,
+.card_cvv_input:invalid,
+.input_email:invalid,
+.input_address:invalid,
+.input_name:invalid,
+.input_phone:invalid {
+  border: 1px solid red;
 }
 
 .bank_card {
@@ -173,4 +185,9 @@ body.body_hidden {
   color: #000000;
   background-color: #b0976d;
   transition: 0.8s;
+}
+
+.confimed {
+  margin-top: 100px;
+  font-size: 24px;
 }

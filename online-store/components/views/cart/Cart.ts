@@ -2,6 +2,7 @@ import './cart.scss';
 import { ProductsInterface } from '../../appTypes/Interface';
 import localStore from '../../localStorage/LocalStorage';
 import info from '../../../server/products.json'; //! ADD
+import renderBuyProduct from '../buy/buy';
 import { doc } from 'prettier';
 class Cart {
   products: ProductsInterface[];
@@ -121,7 +122,7 @@ class Cart {
 
     if (buttonBuy !== null) {
       buttonBuy.onclick = (): void => {
-        console.log('buy goods');
+        renderBuyProduct();
       };
     }
   }
