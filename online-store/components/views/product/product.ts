@@ -63,8 +63,7 @@ function renderHtmlProduct(prod: ProductsInterface) {
 
 function renderProduct(idPage: string) {
   let idProd = idPage.split('/')[1];
-  let product: ProductsInterface[] = products.filter((n) => n.id === idProd);
-  console.log(product);
+  let product: ProductsInterface[] = products.filter((n) => n.id === idProd);  
   const html: string = renderHtmlProduct(product[0]);
   const render = <HTMLDivElement>document.querySelector('.render');
   render.classList.add('render-card');

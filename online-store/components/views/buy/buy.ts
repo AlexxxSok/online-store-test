@@ -71,13 +71,31 @@ function closeBuyProduct() {
 }
 
 function completPuchase() {
-  const modal = <HTMLElement>document.querySelector('.modal_content');
-  modal.innerHTML = `<h1 class="confimed">Your order has been placed!</h1>`;
-  localStorage.clear();
-  setTimeout(() => {
-    closeBuyProduct();
-    window.location.href = "/#"
-  }, 3000);
+  const name = <HTMLInputElement>document.querySelector('.input_name');
+  const phone = <HTMLInputElement>document.querySelector('.input_phone');
+  const email = <HTMLInputElement>document.querySelector('.input_email');
+  const address = <HTMLInputElement>document.querySelector('.input_address');
+  const cardNumber = <HTMLInputElement>document.querySelector('.card_number');
+  const cardDate = <HTMLInputElement>document.querySelector('.card_date_input');
+  const cardCvv = <HTMLInputElement>document.querySelector('.card_cvv_input');
+
+  const validName = name.matches('.invalid');
+  const validAddress = address.matches('.invalid');
+  const validPhone = phone.matches(':invalid');
+  const validEmail = email.matches(':invalid');
+  const validcardNumber = cardNumber.matches(':invalid');
+  const validcardDate = cardDate.matches(':invalid');
+  const validcardCvv = cardCvv.matches(':invalid');
+  
+  if (!validName && !validPhone && !validAddress && !validEmail && !validcardNumber && !validcardDate && !validcardCvv) {
+    const modal = <HTMLElement>document.querySelector('.modal_content');
+    modal.innerHTML = `<h1 class="confimed">Your order has been placed!</h1>`;
+    localStorage.clear();
+    setTimeout(() => {
+      closeBuyProduct();
+      window.location.href = "/#"
+    }, 3000);
+  } else alert('Please, check all fields!');
 }
 
 function checkName() { 
