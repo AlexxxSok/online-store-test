@@ -54,7 +54,7 @@ function renderHtmlProduct(prod: ProductsInterface) {
       <div class="card-buy">
         <h2>$ ${prod.price}</h2>
         <button id="${prod.id}" class="card-btn add-btn">Add to cart</button>
-        <a href="#curt"><button class="card-btn buy-btn">Buy now</button></a>
+        <a href="#cart"><button class="card-btn buy-btn">Buy now</button></a>
       </div>
     </div>
   </section>
